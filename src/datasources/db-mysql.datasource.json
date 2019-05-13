@@ -1,0 +1,6 @@
+{
+  "name": "dbMysql",
+  "connector": "memory",
+  "localStorage": "",
+  "file": ""
+}
