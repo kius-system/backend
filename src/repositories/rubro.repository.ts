@@ -1,15 +1,15 @@
 import {DefaultCrudRepository} from '@loopback/repository';
-import {Turno} from '../models';
+import {Rubro} from '../models';
 import {DbMysqlDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
-export class TurnoRepository extends DefaultCrudRepository<
-  Turno,
-  typeof Turno.prototype.id_turno
+export class RubroRepository extends DefaultCrudRepository<
+  Rubro,
+  typeof Rubro.prototype.id_rubro
 > {
   constructor(
     @inject('datasources.dbMysql') dataSource: DbMysqlDataSource,
   ) {
-    super(Turno, dataSource);
+    super(Rubro, dataSource);
   }
 }

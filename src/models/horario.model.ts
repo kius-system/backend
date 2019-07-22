@@ -1,45 +1,34 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class Turno extends Entity {
-  @property({
-    type: 'number',
-    required: true,
-  })
-  estado: number;
-
+export class Horario extends Entity {
   @property({
     type: 'number',
     id: true,
     required: true,
   })
-  id_turno: number;
-
-  @property({
-    type: 'date',
-    required: true,
-  })
-  fecha: string;
-
-  @property({
-    type: 'date',
-    required: true,
-  })
-  fecha_hora_modificacion: string;
-
-  @property({
-    type: 'date',
-    required: true,
-  })
-  hora: string;
+  id_horario: number;
 
   @property({
     type: 'number',
+    required: true,
   })
-  tipo_cita?: number;
+  dia: string;
+
+  @property({
+    type: 'date',
+    required: true,
+  })
+  hora_fin: string;
+
+  @property({
+    type: 'date',
+    required: true,
+  })
+  hora_inicio: string;
 
 
-  constructor(data?: Partial<Turno>) {
+  constructor(data?: Partial<Horario>) {
     super(data);
   }
 }

@@ -1,4 +1,6 @@
 import {Entity, model, property} from '@loopback/repository';
+import { Turno } from './turno.model';
+import { Horario } from '.';
 
 @model()
 export class Cola extends Entity {
@@ -21,26 +23,19 @@ export class Cola extends Entity {
   })
   descripcion: string;
 
-  @property({
+  /*@property({
     type: 'number',
     required: true,
   })
   capacidad_simultanio: number;
-
-  @property({
-    type: 'array',
-    itemType: 'object',
-    required: false
-  })
-  turnos?: object[];
-
+*/
   @property({
     type: 'array',
     itemType: 'object',
     required: true
   })
-  horarios?: object[];
-
+  horarios?: Horario[];
+/*
   @property({
     type: 'array',
     itemType: 'object',
@@ -53,7 +48,7 @@ export class Cola extends Entity {
     itemType: 'object',
     required: true
   })
-  servicios?: object[];
+  servicios?: object[];*/
 
 
   constructor(data?: Partial<Cola>) {
